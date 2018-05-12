@@ -4,8 +4,18 @@
         <param-name>contextdata1</param-name>
         <param-value>this is contextdata 1</param-value>
     </context-param>
-    
-    
+    <context-param>
+        <param-name>contextdata2</param-name>
+        <param-value>this is contextdata 2</param-value>
+    </context-param>
+    <context-param>
+        <param-name>contextdata3</param-name>
+        <param-value>this is contextdata 3</param-value>
+    </context-param>
+    <context-param>
+        <param-name>contextdata4</param-name>
+        <param-value>this is contextdata 4</param-value>
+    </context-param>
     <servlet>
         <servlet-name>Servletone</servlet-name>
         <servlet-class>com.jlxy.servlet.Servletone</servlet-class>
@@ -61,8 +71,18 @@
     <servlet>
         <servlet-name>ServletContext</servlet-name>
         <servlet-class>com.jlxy.servlet.demo8.ServletContext</servlet-class>
-        
-       
+    </servlet>
+    <servlet>
+        <servlet-name>ServletDemo10</servlet-name>
+        <servlet-class>com.jlxy.servlet.demo10.ServletDemo10</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServletDemo11</servlet-name>
+        <servlet-class>com.jlxy.servlet.demo11.ServletDemo11</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServletDemo12</servlet-name>
+        <servlet-class>com.jlxy.servlet.demo12.ServletDemo12</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Servletone</servlet-name>
@@ -99,6 +119,18 @@
     <servlet-mapping>
         <servlet-name>ServletContext</servlet-name>
         <url-pattern>/ServletContext</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletDemo10</servlet-name>
+        <url-pattern>/ServletDemo10</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletDemo11</servlet-name>
+        <url-pattern>/ServletDemo11</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletDemo12</servlet-name>
+        <url-pattern>/ServletDemo12</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>

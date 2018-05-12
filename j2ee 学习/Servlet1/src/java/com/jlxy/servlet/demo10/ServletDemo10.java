@@ -4,11 +4,11 @@
  * and open the template in the editor.
  */
 
-package com.jlxy.servlet.demo8;
+package com.jlxy.servlet.demo10;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Enumeration;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -18,24 +18,18 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author 16221
  */
-public class ServletContext extends HttpServlet {
+public class ServletDemo10 extends HttpServlet {
    
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        String dataString=this.getServletContext().getInitParameter("contextdata1");
-        System.out.println(dataString);
+        String dataString="aaaaaaaaaaaaaaaaaaaaaaaaa from demo 10";
+        // 把数据带给
         
-        
-        Enumeration enumeration=this.getServletContext().getInitParameterNames();
-        
-        while (enumeration.hasMoreElements()) {
-            String nextElement = enumeration.nextElement().toString();
-            
-            System.out.println("name="+nextElement+"value="+this.getServletContext().getInitParameter(nextElement));
-            
-        }
+        this.getServletContext().setAttribute("data", dataString);
+        RequestDispatcher rd= this.getServletContext().getRequestDispatcher("/demo10_1.jsp");
+        rd.forward(request, response);
       
     } 
 
