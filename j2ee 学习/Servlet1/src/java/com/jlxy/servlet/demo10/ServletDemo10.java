@@ -24,7 +24,7 @@ public class ServletDemo10 extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        String dataString="aaaaaaaaaaaaaaaaaaaaaaaaa from demo 10";
+        String dataString="aaaaaaaaaaaaaaaaaaaaaaaaa from demo 10 class";
         // 把数据带给
         
         this.getServletContext().setAttribute("data", dataString);

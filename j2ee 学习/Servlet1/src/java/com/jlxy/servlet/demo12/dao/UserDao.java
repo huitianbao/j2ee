@@ -5,6 +5,7 @@
  */
 package com.jlxy.servlet.demo12.dao;
 
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
@@ -16,8 +17,10 @@ import java.util.logging.Logger;
  * @author 16221
  */
 public class UserDao {
+
+    /*
     private static Properties dbconfig=new Properties();
-    
+
     static {
         try {
             InputStream inputStream=UserDao.class.getClassLoader().getResourceAsStream("db.properties");
@@ -29,18 +32,30 @@ public class UserDao {
         }
         
     }
-
+    
+     */
     public UserDao() {
     }
-    
-    
-    public void update()throws IOException{
-        System.out.println(dbconfig.getProperty("url"));
-        
+//通过类装载的方式得到文件的位置，再2通过 fileInputStream 读取到更新的数据
+
+    public void update() throws IOException {
+        String pathString = UserDao.class.getClassLoader().getResource("/db.properties").getPath();
+
+        FileInputStream in = new FileInputStream(pathString);
+        Properties dbconfig = new Properties();
+        dbconfig.load(in);
+
+        System.out.println("url_god       "+dbconfig.getProperty("url_god"));
+        System.out.println("url_htbtest   "+dbconfig.getProperty("url_htbtest"));
+        System.out.println("url_lql       "+dbconfig.getProperty("url_lql"));
+        System.out.println("url_jkstudent "+dbconfig.getProperty("url_jkstudent"));
+        System.out.println("username      "+dbconfig.getProperty("username"));
+        System.out.println("password      "+dbconfig.getProperty("password"));
+
     }
-    
-    
-/*
+
+    /*
+    //无法获得更新后的数据
      public void update() throws IOException {
         
         InputStream in=UserDao.class.getClassLoader().getResourceAsStream("db.properties");
@@ -60,7 +75,5 @@ public class UserDao {
         
     }
     
-    */
-   
-    
+     */
 }
